@@ -1,0 +1,175 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>智慧型多功能側溝清潔機器人｜互動式 3D 模型</title><style>
+:root{color-scheme:dark;--bg:#000000;--panel:#0d0f12;--line:#2d333a;--bright:#e8f2fa;--muted:#9cb2c5;--cyan:#5cc4e5;--amber:#ffbe60}*{box-sizing:border-box}body{margin:0;background:#000000;color:var(--bright);font:14px/1.5 system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif}.app{display:grid;grid-template-columns:minmax(0,1fr) 310px;height:100dvh;min-height:610px}.scene{position:relative;min-width:0;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#1b1f25 0%,#080a0d 45%,#000000 100%)}canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.top{position:absolute;top:22px;left:26px;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--cyan);font-weight:750}.top h1{font-size:clamp(20px,2.3vw,31px);margin:6px 0 5px;line-height:1.23}.top p{margin:0;color:#adc2d2;font-size:12px}.bottom{position:absolute;bottom:20px;left:22px;right:22px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.hint{padding:8px 11px;background:#071522ba;border:1px solid #48607088;border-radius:9px;color:#bad0df;font-size:11px}.status{position:absolute;right:20px;top:20px;padding:8px 13px;background:#061723bb;border:1px solid #36546b;border-radius:20px;color:#8ee7db;font-size:12px}.sidebar{padding:20px;overflow-y:auto;background:linear-gradient(180deg,#101215,#060708);border-left:1px solid #30495b}.sidebar h2{font-size:19px;margin:0 0 5px}.sub{font-size:12px;color:var(--muted);margin:0 0 18px}.group{border-top:1px solid var(--line);padding:15px 0}.group h3{font-size:12px;letter-spacing:1px;color:#8acde0;margin:0 0 12px}.row{display:flex;justify-content:space-between;gap:9px;align-items:center;margin:9px 0}.row label{font-size:13px}output{color:var(--amber);font-weight:700;font-variant-numeric:tabular-nums}input[type=range]{width:100%;accent-color:#61c7e5;cursor:pointer;margin:7px 0 2px}button{background:#24445c;color:#e7f7ff;border:1px solid #46708a;border-radius:10px;padding:10px 11px;cursor:pointer;font:inherit;font-size:12px}button:hover{background:#335873}select{width:100%;padding:11px;color:#e9eff4;background:#171b20;border:1px solid #43505d;border-radius:9px;font:inherit}.component-info{margin-top:12px;padding:12px;background:#151b20;border:1px solid #394650;border-radius:10px;font-size:12px;color:#b8cbd7;min-height:105px}.component-info strong{color:#eaf3f7;font-size:14px}.component-info p{margin:6px 0 0}.component-info em{color:#f3bb76;font-style:normal}button.active{background:#196a83;border-color:#75d6f4}button:focus-visible{outline:2px solid var(--amber)}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}.wide{grid-column:1 / -1}.check{display:flex;align-items:center;gap:9px;margin:10px 0;color:#d7e7f0;font-size:13px}.check input{accent-color:#62c9e8}.pill{border-radius:20px;padding:4px 9px;font-size:11px;color:#b7d3e4;background:#24435b}.note{padding:12px;background:#0c2032;border:1px solid #385065;border-radius:10px;color:#aac3d3;font-size:12px;margin-top:13px}.kbd{color:#ffc36c;font-weight:700}.mini{font-size:11px;color:#90adbe}.legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.legend span{font-size:11px;border:1px solid #36526a;padding:4px 7px;border-radius:30px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;background:#72bbde}.mode{display:flex;gap:8px;margin:14px 0}.mode button{flex:1}@media(max-width:800px){.app{height:auto;display:flex;flex-direction:column}.scene{height:56vh;min-height:390px}.sidebar{border-left:0;border-top:1px solid #30495b}.top{top:14px;left:16px}.status{right:12px;top:12px}.bottom{left:12px;right:12px;bottom:12px}.hint{font-size:10px;padding:6px 8px}.sidebar{padding:17px}.group{padding:13px 0}}
+</style></head><body><main class="app"><section class="scene"><canvas id="view" aria-label="可旋轉縮放的側溝清潔機器人 3D 模型"></canvas><div class="top"><div class="eyebrow">INTERACTIVE CONCEPT MODEL / GROUP 9</div><h1>智慧型多功能<br>側溝清潔機器人</h1><p>前方伸縮鏟斗 · 中央暫存箱 · 後方疏通刷 · 垂直垃圾回收</p></div><div class="status" id="state">● 展示模式</div><div class="bottom"><span class="hint">↔ 拖曳旋轉</span><span class="hint">◉ 滾輪／雙指縮放</span><span class="hint">⇧ Shift＋拖曳平移</span><span class="hint">高細節工程概念模型 · 非 CAD 施工圖</span></div></section><aside class="sidebar"><h2>模型操作台</h2><p class="sub">高細節版・深色工程風・可離線操作。</p><div class="mode"><button class="active" id="showcase">單機展示</button><button id="workmode">側溝作業</button></div><div class="group"><h3>01 / 可伸縮式鏟斗</h3><div class="row"><label for="bucket">鏟斗寬度（概念值）</label><output id="bucketVal">30 cm</output></div><input id="bucket" type="range" min="30" max="40" step="1" value="30"><p class="mini">鏟斗兩側伸縮；履帶寬度保持固定。</p></div><div class="group"><h3>02 / 後方疏通機械臂</h3><div class="row"><label for="arm">機械臂升降</label><output id="armVal">55%</output></div><input id="arm" type="range" min="0" max="100" step="1" value="55"><label class="check"><input id="spin" type="checkbox" checked>旋轉刷頭動畫</label></div><div class="group"><h3>03 / 垃圾回收與抽吸</h3><div class="buttons"><button id="collect">模擬挖取 → 升高 → 後移 → 卸料</button><button id="suction">啟動垂直抽吸</button><button id="stop" class="wide">停止動畫</button></div><div class="legend"><span><i class="dot" style="background:#ffbb6b"></i>垃圾流動</span><span><i class="dot" style="background:#6dd4e8"></i>軟管與對接口</span></div><p class="mini" id="flowInfo">抽吸時，垃圾經中央接口前破碎裝置，再沿柔性軟管進入地面回收站。</p></div><div class="group"><h3>04 / 模型與視角</h3><label class="check"><input id="transparent" type="checkbox" checked>中央暫存箱透明顯示</label><label class="check"><input id="labels" type="checkbox" checked>顯示機構標籤</label><label class="check"><input id="cover" type="checkbox">顯示水溝蓋／側溝剖面</label><div class="buttons"><button id="side">正側面</button><button id="iso">立體視角</button><button id="front">前方視角</button><button id="reset">重設全部</button></div></div><div class="group"><h3>05 / 部件分解與獨立介紹</h3><div class="buttons"><button id="explodeOn">展開全部零件</button><button id="explodeOff">恢復組裝</button></div><div class="row"><label for="explodeRange">分解距離</label><output id="explodeValue">0%</output></div><input type="range" id="explodeRange" min="0" max="100" value="0" step="1"><div class="row"><label for="componentSelect">選擇展示部件</label></div><select id="componentSelect" aria-label="選擇部件"><option value="all">全部部件</option><option value="chassis">固定履帶與底盤</option><option value="bucket">可伸縮式鏟斗</option><option value="hopper">中央垃圾暫存箱</option><option value="arm">後方疏通機械臂</option><option value="shred">抽吸前破碎模組</option><option value="hose">抽吸軟管</option><option value="station">地面垃圾回收站</option></select><div class="buttons" style="margin-top:10px"><button id="isolate">單獨展示</button><button id="showAll">顯示全部</button></div><div id="componentInfo" class="component-info"><strong>機構導覽</strong><p>按「展開全部零件」查看分解圖，再選擇部件按「單獨展示」，便能旋轉觀察並閱讀用途。</p></div></div><div class="note"><strong>展示說明</strong><br>本模型依課堂提案建立，使用固定窄型履帶、可伸縮鏟斗、中央垃圾暫存箱、後置升降刷，以及可在回收點垂直對接的抽吸軟管。預定服務於寬 30–40 cm、高 40–100 cm 的小型側溝。抽吸、破碎與承重功能仍需工程驗證。</div></aside></main>
+<script>
+(()=>{'use strict';const c=document.getElementById('view'),ctx=c.getContext('2d'),$=id=>document.getElementById(id);const ui={bucket:$('bucket'),arm:$('arm'),spin:$('spin'),transparent:$('transparent'),labels:$('labels'),cover:$('cover')};let collectStart=0;let W=0,H=0,dpr=1,mode='show',bucket=30,arm=.55,spinning=true,transparent=true,labels=true,cover=false,flow='none',time=0,orbit={yaw:-.83,pitch:.28,zoom:1.78,panX:0,panY:0},parts=[],texts=[],particles=[],activeGroup='chassis',explode=.0,solo='all';const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));const V=(x,y,z)=>({x,y,z});const add=(a,b)=>V(a.x+b.x,a.y+b.y,a.z+b.z);const mul=(a,s)=>V(a.x*s,a.y*s,a.z*s);const mix=(a,b,t)=>add(mul(a,1-t),mul(b,t));const col=(s,f)=>s;const colorHex=h=>{const a=parseInt(h.slice(1),16);return [(a>>16)&255,(a>>8)&255,a&255]};function shade(h,n){const rgb=colorHex(h);return `rgb(${rgb.map(x=>clamp(Math.round(x*n),0,255)).join(',')})`}
+const EXP={chassis:V(0,-.50,-.13),bucket:V(-1.0,.25,-.48),hopper:V(0,1.15,0),arm:V(1.07,.45,.88),shred:V(.38,1.85,-.48),hose:V(-.65,1.6,0),station:V(1.35,2.15,.25)};
+const INF={chassis:['固定履帶與底盤','提供低重心的移動平台，履帶採窄型固定間距設計，以通過目標側溝。'],bucket:['可伸縮式鏟斗','左右鏟板可調整清潔寬度，鏟取淤泥後抬升並向後翻倒至中央暫存箱。'],hopper:['中央垃圾暫存箱','暫時裝載泥沙、落葉與其他清理物；返回回收點後才進行抽吸卸料。'],arm:['後方疏通機械臂','透過升降關節使旋轉刷靠近水溝蓋下方，刷除可接觸到的堵塞物。'],shred:['抽吸前破碎模組','設於暫存箱出口和抽吸管接口間，先處理適合破碎的垃圾，降低管路堵塞機率。'],hose:['抽吸軟管','在指定回收點連接機器人中央出口，將經處理的垃圾向上輸送至地面站。'],station:['地面垃圾回收站','提供抽吸動力與較大收集空間，集中處理機器人暫存的淤泥與垃圾。']};
+function group(id){activeGroup=id}
+function movePart(v,id=activeGroup){let d=EXP[id]||V(0,0,0);return V(v.x+d.x*explode,v.y+d.y*explode,v.z+d.z*explode)}
+function face(vertices,color,alpha=1,stroke){if(solo!=='all' && activeGroup!==solo)return;parts.push({v:vertices.map(p=>movePart(p)),col:color,alpha,stroke,group:activeGroup})}function cub(x,y,z,dx,dy,dz,color,alpha=1){let A=V(x-dx/2,y-dy/2,z-dz/2),B=V(x+dx/2,y-dy/2,z-dz/2),C=V(x+dx/2,y+dy/2,z-dz/2),D=V(x-dx/2,y+dy/2,z-dz/2),E=V(x-dx/2,y-dy/2,z+dz/2),F=V(x+dx/2,y-dy/2,z+dz/2),G=V(x+dx/2,y+dy/2,z+dz/2),I=V(x-dx/2,y+dy/2,z+dz/2);face([A,B,C,D],shade(color,.72),alpha);face([E,F,G,I],shade(color,1.12),alpha);face([A,B,F,E],shade(color,1.3),alpha);face([D,C,G,I],shade(color,.83),alpha);face([A,D,I,E],shade(color,.98),alpha);face([B,C,G,F],shade(color,.92),alpha)}
+function rod(a,b,r,color,N=8){const d=V(b.x-a.x,b.y-a.y,b.z-a.z),len=Math.hypot(d.x,d.y,d.z)||1,ax=V(d.x/len,d.y/len,d.z/len);let seed=Math.abs(ax.y)<.9?V(0,1,0):V(1,0,0);let v=V(ax.y*seed.z-ax.z*seed.y,ax.z*seed.x-ax.x*seed.z,ax.x*seed.y-ax.y*seed.x),m=Math.hypot(v.x,v.y,v.z)||1;v=mul(v,1/m);let w=V(ax.y*v.z-ax.z*v.y,ax.z*v.x-ax.x*v.z,ax.x*v.y-ax.y*v.x);let circles=[a,b].map(p=>Array.from({length:N},(_,i)=>add(p,add(mul(v,Math.cos(i*2*Math.PI/N)*r),mul(w,Math.sin(i*2*Math.PI/N)*r)))));for(let i=0;i<N;i++)face([circles[0][i],circles[0][(i+1)%N],circles[1][(i+1)%N],circles[1][i]],shade(color,.8+.36*Math.sin(i*2*Math.PI/N)),1);face(circles[1],color)}
+function tag(label,pt,clr='#e6f1fa'){if(solo!=='all'&&activeGroup!==solo)return;texts.push({label,pt:movePart(pt),clr,group:activeGroup})}// The bucket is a real articulated scoop: digs at ground level, lifts, then tips backward over the middle bin.
+function bucketMesh(){
+ const breadth=.69+(bucket-30)*.022,front=-1.9,left=-breadth,right=breadth;
+ const active=flow==='collect';
+ let phase=active?((time-collectStart)/8.8)%1:0;
+ const ease=t=>{t=clamp(t,0,1);return t*t*(3-2*t)};
+ // Ordinary front loader: two loader arms rotate around their chassis pivots.
+ // No additional mast, track, or lifting mechanism.
+ const chassisPivot=V(-.20,.78,0);
+ const pivot=V(-1.05,.45,0);
+ const initialAngle=Math.atan2(pivot.y-chassisPivot.y,pivot.x-chassisPivot.x);
+ const radius=Math.hypot(pivot.x-chassisPivot.x,pivot.y-chassisPivot.y);
+ const raisedAngle=-4.72;
+ let phaseLift=0, angle=0, dig=0;
+ if(active){
+   if(phase<.18){dig=ease(phase/.18)*.11;angle=.07*ease(phase/.18);}
+   else if(phase<.57){phaseLift=ease((phase-.18)/.39);angle=.07*(1-phaseLift);dig=.11*(1-phaseLift);}
+   else if(phase<.72){phaseLift=1;angle=-2.12*ease((phase-.57)/.15);}
+   else if(phase<.79){phaseLift=1;angle=-2.12;}
+   else if(phase<.87){phaseLift=1;angle=-2.12*(1-ease((phase-.79)/.08));}
+   else{phaseLift=1-ease((phase-.87)/.13);}
+ }
+ const theta=initialAngle+(raisedAngle-initialAngle)*phaseLift;
+ const attachment=V(chassisPivot.x+radius*Math.cos(theta)-dig,chassisPivot.y+radius*Math.sin(theta),0);
+ const cs=Math.cos(angle),sn=Math.sin(angle);
+ function tr(x,y,z){let dx=x-pivot.x,dy=y-pivot.y;return V(attachment.x+dx*cs-dy*sn,attachment.y+dx*sn+dy*cs,z)}
+ const f=(v,color,alpha=1)=>face(v.map(q=>tr(q.x,q.y,q.z)),color,alpha);
+ f([V(front,.17,left),V(-1.14,.18,left),V(-1.14,.39,left),V(front,.12,left)],'#c2d2dd');
+ f([V(front,.17,right),V(-1.14,.18,right),V(-1.14,.39,right),V(front,.12,right)],'#c2d2dd');
+ f([V(front,.12,left),V(front,.12,right),V(-1.17,.14,right),V(-1.17,.14,left)],'#cbd6dc');
+ f([V(-1.17,.14,left),V(-1.17,.14,right),V(-1.14,.40,right),V(-1.14,.40,left)],'#7c9aaf');
+ f([V(front,.12,left),V(front,.12,right),V(front,.17,right),V(front,.17,left)],'#eff6f8');
+ for(let i=0;i<9;i++){
+  let z=left+.09+i*(right-left-.18)/8;
+  f([V(front-.13,.105,z-.035),V(front+.04,.11,z-.035),V(front+.04,.11,z+.035),V(front-.13,.105,z+.035)],'#e5edf1');
+ }
+ for(let z of [left+.08,right-.08])f([V(-1.26,.18,z-.035),V(-1.21,.18,z+.035),V(-1.18,.43,z+.035),V(-1.22,.43,z-.035)],'#5c778a');
+ // Loader lift arms and short bucket-tilt actuators, attached to the chassis.
+ for(let k of [-1,1]){
+   const z=k*.48;
+   const mount=V(chassisPivot.x,chassisPivot.y,z);
+   const at=V(attachment.x,attachment.y,z);
+   rod(mount,at,.072,'#77818b',12);
+   rod(mount,at,.044,'#9caab4',10);
+   rod(V(-.55,.73,z),V(mix(mount,at,.66).x,mix(mount,at,.66).y,z),.027,'#c29b66',10);
+   const hinge=tr(-1.05,.45,z);
+   const tiltPoint=tr(-1.37,.24,z);
+   rod(hinge,tiltPoint,.047,'#c0ccd2',10);
+   rod(hinge,tiltPoint,.023,'#caa873',8);
+   rod(V(mount.x,mount.y,z-.045*k),V(mount.x,mount.y,z+.045*k),.096,'#9fabb3',12);
+ }
+ const ext=(bucket-30)*.022;
+ for(let k of [-1,1])if(ext>.004)f([V(front,.16,k*.69),V(front,.16,k*(.69+ext)),V(-1.2,.2,k*(.69+ext)),V(-1.2,.2,k*.69)],'#f1b559');
+ // The debris stays INSIDE the physical bucket during digging, lifting and travel.
+ if(active && phase>=.08 && phase<.60){
+  for(let i=0;i<18;i++){
+   const x=-1.74+(i%6)*.095,z=-.36+Math.floor(i/6)*.30;
+   let q=tr(x,.23+(i%3)*.018,z);
+   particles.push({p:q,r:2.8,color:i%3?'#c89456':'#e0b47c'});
+  }
+ }
+ // Material follows the bucket until it tips, then drops into the open hopper.
+ if(active && phase>=.60 && phase<.79){
+  const stage=(phase-.60)/.19;
+  for(let i=0;i<25;i++){
+   const delay=(i%8)/8*.43;
+   if(stage<delay)continue;
+   const t=clamp((stage-delay)/.52,0,1);
+   const lip=tr(front+.08,.16,-.35+(i%6)*.14);
+   const bin=V(-.18+(i%5)*.1,.80,-.29+(i%6)*.1);
+   const p=mix(lip,bin,t*t);
+   particles.push({p,r:3.1,color:i%3?'#b88f58':'#d0ab78'});
+  }
+ }
+ tag(active?'鏟車式挖取／抬升／卸料':'伸縮鏟斗',tr(-1.53,.55,0),'#ffd18b');
+}
+function track(z){
+// Continuous rubber tread with visible grousers, steel road wheels, axle hubs and drive sprockets.
+cub(.04,.33,z,2.57,.50,.37,'#171e25');
+for(let x=-1.17;x<=1.26;x+=.128){
+ cub(x,.083,z,.092,.068,.41,'#34404a'); cub(x,.593,z,.094,.070,.41,'#374551');
+ cub(x,.35,z-.207,.09,.40,.058,'#303b45'); cub(x,.35,z+.207,.09,.40,.058,'#303b45');
+}
+for(let x of [-1.07,-.68,-.28,.12,.52,.93,1.18]){
+ rod(V(x,.345,z-.23),V(x,.345,z+.23),.174,'#8b9cab',14);
+ rod(V(x,.345,z-.24),V(x,.345,z+.24),.092,'#2a3846',12);
+ rod(V(x,.345,z-.28),V(x,.345,z+.28),.029,'#d7dfe3',9);
+}
+for(let x of [-1.06,1.16])for(let i=0;i<9;i++){
+ let ang=2*Math.PI*i/9;rod(V(x+.124*Math.cos(ang),.345+.124*Math.sin(ang),z-.255),V(x+.124*Math.cos(ang),.345+.124*Math.sin(ang),z-.285),.013,'#d9ad67',5)
+}
+}
+function fineHardware(){
+ // Chassis steel reinforcement beams, ribbed deck and orange service hatch.
+ for(let z of [-.51,.51]){
+  cub(.07,.76,z,2.35,.085,.10,'#8d9499');
+  for(let x=-.95;x<1.14;x+=.25)cub(x,.812,z,.045,.018,.082,'#bfc5c9');
+ }
+ cub(-.72,.985,0,.27,.07,.76,'#9ea7ad');
+ for(let z of [-.29,-.15,0,.15,.29])cub(-.72,1.026,z,.21,.01,.025,'#586978');
+ // Power compartment behind hopper
+ cub(.89,.97,0,.43,.29,.79,'#59646c');
+ for(let z of [-.31,-.18,-.05,.08,.21,.34])cub(1.109,.97,z,.02,.19,.026,'#aab2b7');
+ // Frame attachments and bolts
+ for(let x of [-.93,-.42,.47,.98])for(let z of [-.47,.47]){
+  rod(V(x,.88,z),V(x,.934,z),.032,'#cfd4d7',10);
+  rod(V(x,.945,z),V(x,.962,z),.014,'#394a57',6)
+ }
+ // Hydraulic power hoses and articulated cylinders along body sides
+ for(let side of [-1,1]){
+  rod(V(-.89,.68,side*.41),V(-1.28,.47,side*.52),.058,'#203846',10);
+  rod(V(-1.28,.47,side*.52),V(-1.52,.35,side*.51),.031,'#c4a26b',10);
+  rod(V(.74,.98,side*.37),V(1.25,1.17+arm*.45,side*.38),.038,'#1a3447',10);
+  rod(V(.74,.98,side*.37),V(1.25,1.17+arm*.45,side*.38),.013,'#7dc5dc',7);
+ }
+ // Sensor pods, camera and two working lamps
+ cub(-1.20,1.04,-.35,.25,.19,.20,'#4c545b');cub(-1.29,1.06,-.35,.06,.10,.10,'#c7d7df');
+ for(let z of [-.49,.49]){
+  cub(-1.22,.88,z,.075,.16,.17,'#d5d7d2');
+  cub(-1.262,.88,z,.02,.10,.12,'#cad6db');
+ }
+}
+function model(){parts=[];texts=[];particles=[];group('chassis');let groundY=0;if(cover||mode==='work'){face([V(-3,0,-2.1),V(3.15,0,-2.1),V(3.15,0,2.1),V(-3,0,2.1)],'#1f2227',.6); // side walls low translucency
+face([V(-2.65,0,-1.38),V(2.4,0,-1.38),V(2.4,2.3,-1.38),V(-2.65,2.3,-1.38)],'#34383d',.13);face([V(-2.65,0,1.38),V(2.4,0,1.38),V(2.4,2.3,1.38),V(-2.65,2.3,1.38)],'#454b51',.14);for(let x=-2.7;x<=2.35;x+=.26)cub(x,2.42,0,.09,.08,2.92,'#747c82',.6);tag('側溝蓋',V(-2.5,2.55,-1.35),'#bacbd9')}
+group('chassis');for(let z of [-.74,.74])track(z);cub(.05,.62,0,2.45,.38,1.18,'#59636b');cub(.05,.83,0,2.29,.12,1.1,'#4e575f');group('hopper');cub(.01,.90,0,1.13,.14,.94,'#c8d0d6');cub(.01,.82,0,1.08,.51,.90,'#8da0aa',transparent?.18:1); // bin debris
+// Reinforced open-top waste hopper, steel rim and hinged upper guard
+for(let z of [-.48,.48]){
+ cub(.0,1.11,z,1.19,.070,.065,'#d8dde0');
+ for(let x of [-.51,-.22,.07,.36,.51])cub(x,.91,z,.042,.40,.076,'#9ca7ae');
+}
+for(let x of [-.56,.56])cub(x,1.11,0,.07,.07,1.01,'#d8dde0');
+for(let x of [-.37,.37])for(let z of [-.31,.31])rod(V(x,1.14,z),V(x,1.162,z),.023,'#f1cb86',8);
+for(let i=0;i<18;i++){let x=-.40+(i%6)*.15,z=-.30+Math.floor(i/6)*.26;face([V(x,.74,z),V(x+.12,.78,z+.05),V(x+.09,.73,z+.13)],i%3===0?'#d39d50':'#8b7962',.9)}
+for(let x of [-.57,.57])cub(x,.94,0,.09,.49,1.04,'#bfc9cf',.72);tag('中央垃圾暫存箱',V(.02,1.58,.03),'#b9e9ff');
+group('chassis');fineHardware();
+group('bucket');bucketMesh(); // rear arm at x 1.24, lift to top
+group('arm');let p=V(1.0,.85,0), q=V(1.36,1.0+arm*.64,.05),r=V(1.57,1.17+arm*1.05,.05);rod(p,q,.115,'#7f888f');rod(q,r,.095,'#adb4b9');cub(1.4,1.20+arm*.55,.07,.12,.10,.20,'#b89663');rod(V(1.03,.85,.13),V(1.42,.94+arm*.53,.13),.045,'#c5a06b');for(let s of [-1,1])rod(add(r,V(0,0,s*.4)),add(r,V(0,0,-s*.37)),.0+ .002,'#6aa5c2');rod(add(r,V(0,0,-.40)),add(r,V(0,0,.40)),.18,'#5b646b');for(let i=0;i<11;i++){let z=-.35+i*.07,a=time*(spinning?5:0)+i*1.71;rod(V(r.x+.17*Math.cos(a),r.y+.17*Math.sin(a),z),V(r.x+.32*Math.cos(a),r.y+.32*Math.sin(a),z),.016,i%2?'#b8c8d0':'#ffb957',5)}tag('升降疏通刷',add(r,V(.1,.48,.1)),'#aceafc');
+// shredder module in center vertical inlet
+group('shred');cub(.1,1.33,0,.58,.36,.6,'#555d64');for(let i=-2;i<=2;i++){rod(V(-.10+i*.08,1.34,-.22),V(-.10+i*.08,1.34,.22),.045,'#c29758',6)}tag('抽吸前破碎模組',V(.58,1.52,.34),'#ffd18b');
+// vertical flexible hose, visible also in showcase as removable/docked scenario
+group('hose');if(mode==='work'){let center=V(.10,1.54,0),top=V(.10,2.68,0);for(let i=0;i<15;i++){let yy=center.y+i*(top.y-center.y)/14;rod(V(.1,yy,0),V(.1,yy+.07,0),.18+(i%2)*.035,'#9aa4ab',9)}
+// ground level station above grate, offset behind
+group('station');cub(.33,3.12,0,1.3,.86,1.1,'#6d767d');cub(.33,3.34,.56,.72,.44,.10,'#4f565d',.65);cub(.33,2.84,0,1.55,.08,1.17,'#1d2f40');tag('地面垃圾回收站',V(.55,3.66,.05),'#daf5ff');}
+else{ // artistic dock hose to station elevated, side so visible
+let prev=V(.1,1.53,0),n=22;for(let i=1;i<=n;i++){let t=i/n,point=V(.1+.42*t,1.53+1.23*t+.12*Math.sin(Math.PI*t),0);rod(prev,point,.135+(i%3===0?.02:0),'#9aa5ad',8);prev=point}group('station');cub(.86,3.13,0,1.3,.83,1.08,'#6d747a');cub(.86,3.28,.55,.62,.38,.09,'#454c52',.68);tag('地面垃圾回收站',V(1.13,3.68,0),'#c9efff')}
+if(flow==='suction'&&solo==='all'){for(let i=0;i<20;i++){let t=(time*.38+i/20)%1;let py=1.03+t*1.97;particles.push({p:V(.11,py,.1+Math.sin(t*20+i)*.11),r:3.6,color:i%2?'#c79e5f':'#b9864e'})}}else if(flow==='collect'){ /* debris rides in bucketMesh, then drops into the central bin */ }
+}
+function camera(p){let yaw=orbit.yaw,pitch=orbit.pitch,cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);let xx=p.x*.98,zz=p.z;let ax=xx*cy-zz*sy,az=xx*sy+zz*cy,by=p.y*cp-az*sp,bz=p.y*sp+az*cp;let distance=10.8/orbit.zoom,fac=Math.min(W,H)*1.14;let den=Math.max(5.2,distance-bz);return {x:W*.51+orbit.panX+ax*fac/den,y:H*.62+orbit.panY-by*fac/den,d:den}}
+function draw(){dpr=Math.min(window.devicePixelRatio||1,3);let rect=c.getBoundingClientRect(),nw=Math.max(1,Math.round(rect.width*dpr)),nh=Math.max(1,Math.round(rect.height*dpr));if(c.width!==nw||c.height!==nh){c.width=nw;c.height=nh}W=nw;H=nh;ctx.clearRect(0,0,W,H);ctx.fillStyle='#000';const grd=ctx.createRadialGradient(W*.55,H*.44,40,W*.55,H*.44,Math.max(W,H)*.7);grd.addColorStop(0,'#171a1f');grd.addColorStop(.45,'#090b0e');grd.addColorStop(1,'#000000');ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);model();const prep=parts.map(f=>({f,pts:f.v.map(camera)}));prep.sort((a,b)=>b.pts.reduce((s,p)=>s+p.d,0)/b.pts.length-a.pts.reduce((s,p)=>s+p.d,0)/a.pts.length);for(const {f,pts} of prep){if(pts.length<3)continue;ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i].x,pts[i].y);ctx.closePath();ctx.globalAlpha=f.alpha;ctx.fillStyle=f.col;ctx.fill();ctx.strokeStyle='rgba(0,0,0,.38)';ctx.lineWidth=Math.max(.55,dpr*.62);ctx.stroke()}ctx.globalAlpha=1;for(const pt of particles){let p=camera(pt.p);ctx.beginPath();ctx.arc(p.x,p.y,pt.r*dpr,0,Math.PI*2);ctx.fillStyle=pt.color;ctx.shadowColor=pt.color;ctx.shadowBlur=8*dpr;ctx.fill();ctx.shadowBlur=0}
+if(labels){ctx.font=`${Math.round(12*dpr)}px system-ui,"Microsoft JhengHei"`;for(const t of texts){let q=camera(t.pt),text=t.label,width=ctx.measureText(text).width+16*dpr;ctx.fillStyle='#092436dc';ctx.strokeStyle='#47738d';ctx.lineWidth=dpr;const x=q.x-width/2,y=q.y-14*dpr;ctx.beginPath();ctx.roundRect(x,y,width,25*dpr,7*dpr);ctx.fill();ctx.stroke();ctx.fillStyle=t.clr;ctx.textAlign='center';ctx.fillText(text,q.x,y+17*dpr)}}}
+const comp=$('componentSelect'),detail=$('componentInfo'),exRange=$('explodeRange');
+function describe(){const id=comp.value;if(id==='all'){detail.innerHTML='<strong>機構導覽</strong><p>選擇一項部件按「單獨展示」可隱藏其他零件，旋轉檢視。按「展開全部零件」可查看完整分解圖。</p>';return}const d=INF[id];detail.innerHTML='<strong>'+d[0]+'</strong><p>'+d[1]+'</p><p><em>概念展示，非實際裝配工程圖。</em></p>'}
+function setExplode(v){explode=clamp(v,0,1);exRange.value=Math.round(explode*100);$('explodeValue').textContent=Math.round(explode*100)+'%'}
+$('explodeOn').onclick=()=>{solo='all';comp.value='all';setExplode(1);describe();orbit.zoom=1.30;flow='none'};
+$('explodeOff').onclick=()=>{solo='all';comp.value='all';setExplode(0);describe();orbit.zoom=1.78};
+exRange.oninput=()=>{solo='all';setExplode(+exRange.value/100);describe()};
+comp.onchange=()=>{describe()};
+$('isolate').onclick=()=>{if(comp.value==='all')return;solo=comp.value;setExplode(.65);orbit.zoom=1.65;flow='none';describe();$('state').textContent='● 單一部件展示'};
+$('showAll').onclick=()=>{solo='all';comp.value='all';setExplode(0);describe();$('state').textContent='● 全部機構'};
+describe();
+let last=performance.now();function frame(now){let dt=Math.min(.05,(now-last)/1000);last=now;time+=dt;draw();requestAnimationFrame(frame)}requestAnimationFrame(frame);
+function sync(){bucket=+ui.bucket.value;arm=+ui.arm.value/100;spinning=ui.spin.checked;transparent=ui.transparent.checked;labels=ui.labels.checked;cover=ui.cover.checked;$('bucketVal').textContent=bucket+' cm';$('armVal').textContent=Math.round(arm*100)+'%'}Object.values(ui).forEach(el=>el.addEventListener('input',sync));function switchMode(m){mode=m;$('showcase').classList.toggle('active',m==='show');$('workmode').classList.toggle('active',m==='work');$('state').textContent=m==='show'?'● 單機展示':'● 側溝作業';ui.cover.checked=m==='work';cover=ui.cover.checked;orbit.zoom=m==='work'?1.30:1.78;orbit.panY=m==='work'?H*.13:0} $('showcase').onclick=()=>switchMode('show');$('workmode').onclick=()=>switchMode('work');$('collect').onclick=()=>{solo='all';comp.value='all';setExplode(0);describe();flow='collect';collectStart=time;$('flowInfo').textContent='鏟斗先挖取，再於車頭垂直升到車體上方，沿上方軌道移到暫存箱上方後才向後翻倒，完成後循原路返回。'};$('suction').onclick=()=>{flow='suction';switchMode('work');$('flowInfo').textContent='垃圾通過中央破碎接口，再沿垂直軟管送往地面回收站（概念動畫）。'};$('stop').onclick=()=>{flow='none';$('flowInfo').textContent='動畫已停止，可繼續調整機械結構。'};$('side').onclick=()=>{orbit.yaw=0;orbit.pitch=.02;orbit.zoom=1.72;orbit.panX=0;orbit.panY=0};$('front').onclick=()=>{orbit.yaw=Math.PI/2;orbit.pitch=.12;orbit.zoom=1.68;orbit.panX=0;orbit.panY=0};$('iso').onclick=()=>{orbit.yaw=-.83;orbit.pitch=.28;orbit.zoom=1.78;orbit.panX=0;orbit.panY=0};$('reset').onclick=()=>{ui.bucket.value=30;ui.arm.value=55;ui.spin.checked=true;ui.transparent.checked=true;ui.labels.checked=true;ui.cover.checked=false;flow='none';solo='all';comp.value='all';setExplode(0);describe();orbit={yaw:-.83,pitch:.28,zoom:1.78,panX:0,panY:0};switchMode('show');sync()};sync();
+let dragging=false,prev=null,shift=false,touches=new Map(),pinchDistance=0;c.addEventListener('pointerdown',e=>{c.setPointerCapture(e.pointerId);touches.set(e.pointerId,{x:e.clientX,y:e.clientY});dragging=true;prev={x:e.clientX,y:e.clientY}});c.addEventListener('pointermove',e=>{if(!touches.has(e.pointerId))return;touches.set(e.pointerId,{x:e.clientX,y:e.clientY});if(touches.size===2){let [a,b]=[...touches.values()],dist=Math.hypot(a.x-b.x,a.y-b.y);if(pinchDistance)orbit.zoom=clamp(orbit.zoom*dist/pinchDistance,.70,2.25);pinchDistance=dist;prev={x:e.clientX,y:e.clientY};return}let dx=e.clientX-prev.x,dy=e.clientY-prev.y;prev={x:e.clientX,y:e.clientY};if(e.shiftKey){orbit.panX+=dx*dpr;orbit.panY+=dy*dpr}else{orbit.yaw+=dx*.008;orbit.pitch=clamp(orbit.pitch+dy*.006,-1.05,1.25)}});c.addEventListener('pointerup',e=>{touches.delete(e.pointerId);dragging=false;pinchDistance=0});c.addEventListener('pointercancel',e=>{touches.delete(e.pointerId);dragging=false;pinchDistance=0});c.addEventListener('wheel',e=>{e.preventDefault();orbit.zoom=clamp(orbit.zoom*Math.exp(-e.deltaY*.001),.70,2.25)},{passive:false});window.addEventListener('keydown',e=>{if(e.key==='Escape'){$('stop').click()}});
+})();</script></body></html>
